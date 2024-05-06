@@ -11,6 +11,7 @@
         }
 
         ul {
+            border-radius: 10px;
             list-style-type: none;
             max-width: 2000px;
             width: 1300px;
@@ -36,6 +37,8 @@
         }
 
         li a:hover {
+            height: 62px;
+            margin-top: -5px;
             background-color: #111;
         }
 
@@ -69,6 +72,14 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
+        .pdp-icon {
+            border-radius: 50%;
+            background-color: black;
+            margin-left: -90px;
+            position:absolute;
+            top: 20px;
+        }
+
 .container {
   border-radius: 5px;
   width: 50%;
@@ -81,13 +92,16 @@ input[type=submit]:hover {
 <body>
 
 <div class="header">
+    <img width="80" height="80"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqBXIz-jZNaAsvm1hx6rOiI3Qm35EM7yW4WDEGsFMmlFfsWqHFuhOKNO8LrOz_Aa58pwY&usqp=CAU"
+         class="pdp-icon">
     <h2>PDP News</h2>
 </div>
 
 <ul>
-    <li><a class="active" href=".">Home</a></li>
+    <li><a href=".">Home</a></li>
     <li><a href="news">News</a></li>
-    <li><a href="contact">Contact</a></li>
+    <li><a class="active" href="contact">Contact</a></li>
 </ul>
 
 

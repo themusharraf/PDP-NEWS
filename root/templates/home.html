@@ -16,6 +16,7 @@
             width: 1300px;
             margin-left: 400px;
             padding: 0;
+            border-radius: 10px;
             overflow: hidden;
             background-color: #333;
             position: -webkit-sticky; /* Safari */
@@ -36,7 +37,17 @@
         }
 
         li a:hover {
+            height: 38px;
+            margin-top: -5px;
             background-color: #111;
+        }
+
+        .pdp-icon {
+            border-radius: 50%;
+            background-color: black;
+            margin-left: -90px;
+            position:absolute;
+            top: 20px;
         }
 
         .active {
@@ -47,6 +58,9 @@
 <body>
 
 <div class="header">
+    <img width="80" height="80"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqBXIz-jZNaAsvm1hx6rOiI3Qm35EM7yW4WDEGsFMmlFfsWqHFuhOKNO8LrOz_Aa58pwY&usqp=CAU"
+         class="pdp-icon">
     <h2>PDP News</h2>
 </div>
 
