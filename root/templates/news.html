@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Add a gray background color with some padding */
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background: #f1f1f1;
+        }
+
+        /* Header/Blog Title */
+        .header {
+            margin-left: 100px;
+            margin-top: -30px;
+            font-size: 25px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        ul {
+            list-style-type: none;
+            max-width: 2000px;
+            height: 70px;
+            width: 1300px;
+            margin-left: 400px;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky; /* Safari */
+            position: absolute;
+            top: 0;
+            border-radius: 10px;
+
+        }
+
+        li {
+            float: left;
+            padding-top: 3px;
+
+        }
+
+        li a {
+            display: flex;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #2649e8;
+            height: 80px;
+            margin-top: -3px;
+        }
+
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+
+        /* Right column */
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            padding-left: 20px;
+        }
+
+        /* Fake image */
+        .fakeimg {
+            background-color: #aaa;
+            width: 50%;
+            padding: 20px;
+
+        }
+
+        .leftcolumn img {
+            width: 60%;
+            height: 400px;
+            margin: auto;
+            background-color: white;
+        }
+
+        /* Add a card effect for articles */
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+
+        }
+
+        .leftcolumn {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+
+        }
+
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .pdp-icon {
+            border-radius: 50%;
+            background-color: black;
+            margin-left: -90px;
+        }
+
+        /* Footer */
+        {#.footer {#}
+        {#    padding: 20px;#}
+        {#    text-align: center;#}
+        {#    background: #ddd;#}
+        {#    margin-top: 20px;#}
+        {#}#}
+
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 800px) {
+            .leftcolumn, .rightcolumn {
+                width: 100%;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <img width="80" height="80"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqBXIz-jZNaAsvm1hx6rOiI3Qm35EM7yW4WDEGsFMmlFfsWqHFuhOKNO8LrOz_Aa58pwY&usqp=CAU"
+         class="pdp-icon">
+    <h2>PDP News</h2>
+</div>
+
+<ul>
+    <li><a class="active" href=".">Home</a></li>
+    <li><a href="news">News</a></li>
+    <li><a href="contact">Contact</a></li>
+</ul>
+
+<div class="row">
+    <div class="leftcolumn">
+
+        {% for post in dataset %}
+        <div class="card">
+            <h2> {{ post.title }} </h2>
+            <h5>{{ post.create_at }}</h5>
+            <img class="fakeimg"
+                 src="{{ post.photo.url}}">
+            <p> {{ post.text }} </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!--<div class="footer">-->
+<!--    <h2>Footer</h2>-->
+<!--</div>-->
+
+</body>
+</html>

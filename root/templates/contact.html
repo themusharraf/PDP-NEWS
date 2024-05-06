@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-size: 28px;
+        }
+
+        .header {
+            margin-left: 100px;
+        }
+
+        ul {
+            list-style-type: none;
+            max-width: 2000px;
+            width: 1300px;
+            margin-left: 400px;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky; /* Safari */
+            position: absolute;
+            top: 0;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: #2649e8;
+        }
+        body {font-family: Arial, Helvetica, sans-serif;}
+        * {box-sizing: border-box;}
+
+        input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  width: 50%;
+  margin: auto;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h2>PDP News</h2>
+</div>
+
+<ul>
+    <li><a class="active" href=".">Home</a></li>
+    <li><a href="news">News</a></li>
+    <li><a href="contact">Contact</a></li>
+</ul>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<h3 style="text-align: center">Contact Form</h3>
+
+<div class="container">
+    <form method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+        {{form }}
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+</body>
+</html>
+
+
