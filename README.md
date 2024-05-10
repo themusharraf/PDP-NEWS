@@ -1,4 +1,4 @@
-# PDP News PDP School 9- Class first Django Project
+# PDP News PDP School 9 - Class first Django Project
 
 
 ![image](https://github.com/themusharraf/PDP-NEWS/assets/122869450/561bf29f-789a-4234-9aa3-145a4cef8b3f)
